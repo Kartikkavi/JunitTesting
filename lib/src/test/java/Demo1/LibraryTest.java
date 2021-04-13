@@ -17,29 +17,76 @@ public class LibraryTest {
 
 	@Test
 	
-		public void firstname() {
-		Example example =new Example();
-		Assert.assertTrue(Example.validatefirstname("Llit"));
-		System.out.println("pass");
-	}
-	
-	@Test
-	
-	public void emailId() {
+	public void given_FirstNameis_Valid() {
 	Example example =new Example();
-	Assert.assertTrue(Example.validatemailId("kartik123@gmail.com"));
+	boolean result =Example.validatefirstname("Kartik");
+	Assert.assertTrue("Happy",result);
 }
 	@Test
 	
-	public void password() {
+	public void given_FirstNameis_In_Valid() {
 	Example example =new Example();
-	Assert.assertTrue(Example.validatepassword("Kaartik@123"));
+	boolean result =Example.validatefirstname("kartik");
+	Assert.assertTrue("Sad",result);
+}
+@Test
+	
+	public void given_lastNameis_Valid() {
+	Example example =new Example();
+	boolean result =Example.validatelastname("Kavi");
+	Assert.assertTrue("Happy",result);
 }
 	@Test
 	
-	public void mobilenum() {
+	public void given_lastNameis_In_Valid() {
 	Example example =new Example();
-	Assert.assertTrue(Example.validatemobilenum("7768059099"));
+	boolean result =Example.validatelastname("kavi");
+	Assert.assertTrue("Sad",result);
 }
+
+	@Test
+	
+	public void given_emailId_is_Valid() {
+	Example example =new Example();
+	boolean result = Example.validatemailId("kartik123@gmail.com");
+	Assert.assertTrue("Happy",result);
+}
+@Test
+	
+	public void given_emailId_is_In_Valid() {
+	Example example =new Example();
+	boolean result = Example.validatemailId("karti@123");
+	Assert.assertTrue("Sad",result);
+}
+	@Test
+	
+	public void given_Password_Valid() {
+	Example example =new Example();
+	boolean result = Example.validatepassword("Kaartik@123");
+	Assert.assertTrue("Happy",result);
+}
+@Test
+	
+	public void given_Password_Is_In_Valid() {
+	Example example =new Example();
+	boolean result = Example.validatepassword("Kaartik123");
+	Assert.assertTrue("Sad",result);
+}
+
+	@Test
+	
+	public void given_Mobilenum_Valid() {
+	Example example =new Example();
+	boolean result = Example.validatemobilenum("7768059099");
+	Assert.assertTrue("Happy",result);
+}
+@Test
+	
+	public void given_Mobilenum_In_Valid() {
+	Example example =new Example();
+	boolean result = Example.validatemobilenum("68059887099");
+	Assert.assertTrue("Sad",result);
+}
+
        
 }
